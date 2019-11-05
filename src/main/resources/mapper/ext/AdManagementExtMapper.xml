@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.mapper.ext.AdManagementExtMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.model.auto.AdManagement">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="code_name" jdbcType="VARCHAR" property="codeName" />
+    <result column="code_id" jdbcType="VARCHAR" property="codeId" />
+    <result column="source" jdbcType="INTEGER" property="source" />
+    <result column="app_name" jdbcType="INTEGER" property="appName" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="kankan_ad_interval_number" jdbcType="VARCHAR" property="kankanAdIntervalNumber" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="create_man" jdbcType="VARCHAR" property="createMan" />
+    <result column="modify_man" jdbcType="VARCHAR" property="modifyMan" />
+    <result column="range_version" jdbcType="INTEGER" property="rangeVersion" />
+    <result column="application_id" jdbcType="VARCHAR" property="applicationId" />
+    <result column="os_version" jdbcType="INTEGER" property="osVersion" />
+    <result column="shield_version" jdbcType="VARCHAR" property="shieldVersion" />
+    <result column="shield_channel" jdbcType="VARCHAR" property="shieldChannel" />
+  </resultMap>
+
+
+ <!--批量插入-->
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into ad_management
+    (code_name, code_id, source)
+    values
+    <foreach collection ="list" item="adManagement" separator =",">
+      (#{adManagement.codeName}, #{adManagement.codeId}, #{adManagement.source})
+    </foreach >
+  </insert>
+
+
+  <insert id="insert" parameterType="com.xiaoniu.model.auto.AdManagement">
+    INSERT INTO ad_management
+     (code_name, code_id, source)
+    VALUES (#{codeName}, #{codeId}, #{source})
+  </insert>
+
+
+</mapper>
