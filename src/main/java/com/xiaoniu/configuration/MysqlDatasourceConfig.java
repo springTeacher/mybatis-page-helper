@@ -35,9 +35,9 @@ public class MysqlDatasourceConfig {
     public DataSource mysqlDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
         druidDataSource.setDbType("com.alibaba.druid.pool.DruidDataSource");
-        druidDataSource.setUsername("root");
-        druidDataSource.setPassword("root");
-        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/user_login?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true");
+        druidDataSource.setUsername("walking_dev");
+        druidDataSource.setPassword("aGFww1L1jLPTQhELlbAe");
+        druidDataSource.setUrl("jdbc:mysql://rm-uf6muqdsogu7h721o.mysql.rds.aliyuncs.com/account_dev?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true");
         return druidDataSource;
     }
 

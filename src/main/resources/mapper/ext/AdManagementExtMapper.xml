@@ -28,14 +28,18 @@
 
 
  <!--批量插入-->
-  <insert id="insertBatch" parameterType="java.util.List">
+  <insert id="insertBatch" parameterType="list">
     insert into ad_management
     (code_name, code_id, source)
     values
-    <foreach collection ="list" item="adManagement" separator =",">
+    <foreach collection ="list" item="adManagement" index="index" separator =",">
       (#{adManagement.codeName}, #{adManagement.codeId}, #{adManagement.source})
     </foreach >
   </insert>
+
+
+
+
 
 
   <insert id="insert" parameterType="com.xiaoniu.model.auto.AdManagement">

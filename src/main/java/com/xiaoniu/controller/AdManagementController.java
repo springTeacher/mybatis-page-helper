@@ -41,14 +41,15 @@ public class AdManagementController {
     public int insertBatch(){
         List<AdManagement> adManagements = new ArrayList<>();
         AdManagement adManagement;
-        for (int i=0; i<1000;i++){
+        long startTime = System.currentTimeMillis();
+        for (int i=0; i<10000;i++){
             adManagement = new AdManagement();
             adManagement.setCodeId("0000"+i);
             adManagement.setCodeName("张三"+i);
             adManagement.setSource(i);
             adManagements.add(adManagement);
         }
-        long startTime = System.currentTimeMillis();
+
         //批量插入
         int success = adManagementService.insertBatch(adManagements);
         System.out.println(System.currentTimeMillis() - startTime);
@@ -60,14 +61,17 @@ public class AdManagementController {
 
     @PostMapping("/one")
     public void insert(){
-
-        for (int i=0; i<1000;i++){
+        long startTime = System.currentTimeMillis();
+        //批量插入
+        for (int i=0; i<10000;i++){
         AdManagement adManagement = new AdManagement();
             adManagement.setCodeId("0000"+i);
             adManagement.setCodeName("张三"+i);
             adManagement.setSource(i);
             adManagementService.insert(adManagement);
+
         }
+        System.out.println(System.currentTimeMillis() - startTime);
 
     }
 
