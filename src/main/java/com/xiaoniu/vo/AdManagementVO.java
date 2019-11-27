@@ -16,7 +16,6 @@ import java.util.List;
 public class AdManagementVO implements Serializable {
     private static final long serialVersionUID = 362199455271562386L;
 
-
     /**
      * 记录列表
      */
@@ -26,6 +25,5 @@ public class AdManagementVO implements Serializable {
      * 总记录数
      */
     private Long total;
-
 
 }
