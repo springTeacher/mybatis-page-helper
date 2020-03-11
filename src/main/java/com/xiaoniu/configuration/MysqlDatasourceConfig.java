@@ -31,28 +31,27 @@ public class MysqlDatasourceConfig {
      */
     private static final String MAPPER_LOCATION = "classpath*:/mapper/**/*.xml";
 
-    @Bean
-    public DataSource mysqlDataSource() {
-        DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setDbType("com.alibaba.druid.pool.DruidDataSource");
-        druidDataSource.setUsername("walking_dev");
-        druidDataSource.setPassword("aGFww1L1jLPTQhELlbAe");
-        druidDataSource.setUrl("jdbc:mysql://rm-uf6muqdsogu7h721o.mysql.rds.aliyuncs.com/account_dev?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true");
-        return druidDataSource;
-    }
+//    @Bean
+//    public DataSource mysqlDataSource() {
+//        DruidDataSource druidDataSource = new DruidDataSource();
+//        druidDataSource.setDbType("com.alibaba.druid.pool.DruidDataSource");
+//        druidDataSource.setUsername("walking_dev");
+//        druidDataSource.setPassword("aGFww1L1jLPTQhELlbAe");
+//        druidDataSource.setUrl("jdbc:mysql://rm-uf6muqdsogu7h721o.mysql.rds.aliyuncs.com/account_dev?useSSL=false&serverTimezone=Hongkong&characterEncoding=utf-8&autoReconnect=true");
+//        return druidDataSource;
+//    }
 
-    @Bean
-    public DataSourceTransactionManager mysqlTransactionManager() {
-        return new DataSourceTransactionManager(mysqlDataSource());
-    }
+//    @Bean
+//    public DataSourceTransactionManager mysqlTransactionManager() {
+//        return new DataSourceTransactionManager();
+//    }
 
-    @Bean
-    public SqlSessionFactory mysqlSqlSessionFactory() throws Exception {
-        final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(mysqlDataSource());
-        //如果不使用xml的方式配置mapper，则可以省去下面这行mapper location的配置。
-        sessionFactory.setMapperLocations(
-                new PathMatchingResourcePatternResolver().getResources(MysqlDatasourceConfig.MAPPER_LOCATION));
-        return sessionFactory.getObject();
-    }
+//    @Bean
+//    public SqlSessionFactory mysqlSqlSessionFactory() throws Exception {
+//        final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+//        //如果不使用xml的方式配置mapper，则可以省去下面这行mapper location的配置。
+//        sessionFactory.setMapperLocations(
+//                new PathMatchingResourcePatternResolver().getResources(MysqlDatasourceConfig.MAPPER_LOCATION));
+//        return sessionFactory.getObject();
+//    }
 }

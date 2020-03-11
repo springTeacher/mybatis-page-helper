@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.mapper.auto.Sheet1Mapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.model.auto.Sheet1">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="industryDisplayName" jdbcType="VARCHAR" property="industrydisplayname" />
+    <result column="dimType" jdbcType="VARCHAR" property="dimtype" />
+    <result column="count" jdbcType="VARCHAR" property="count" />
+    <result column="ruleId" jdbcType="VARCHAR" property="ruleid" />
+  </resultMap>
+</mapper>
