@@ -22,7 +22,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://139.196.100.40:3306/hb-pay"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/hb-pay"
                         userId="root"
                         password="root">
         </jdbcConnection>
